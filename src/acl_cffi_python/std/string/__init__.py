@@ -1,4 +1,4 @@
-from acl_cffi_python.std.string.cffi_core.lib import (string_new, string_push_back, string_at,
+from acl_cffi_python.core.cffi_core.lib import (string_new, string_push_back, string_at,
                                                   string_size, string_sub)
 
 

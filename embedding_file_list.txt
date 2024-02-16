@@ -1,0 +1,8 @@
+ac-library/atcoder/*
+src/acl_cffi_python/*/*.py
+src/acl_cffi_python/*/*.h
+src/acl_cffi_python/*/*/*.hpp
+src/acl_cffi_python/*/*/*.py
+src/acl_cffi_python/*/*/*.h
+src/acl_cffi_python/*/*/*.hpp
+setup.py

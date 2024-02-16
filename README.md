@@ -30,13 +30,13 @@ tar.gzに圧縮してバイナリで投げる。
 |std/vector vector vvi|ok|ok|
 |std/utility pair ll|ok|ok|
 |std/string|ok|ok|
-|std/set set ll|
-|std/set multiset ll|
-|std/set map ll|
+|std/set set ll|ok|ok|
+|std/set multiset ll|ok|ok|
+|std/map map ll|
 |io|ok|ok||||
 |math/crt|ok|ok||||
 |math/floor_sum|ok|ok||||
-|math/ext_gcd||||||
+|math/ext_gcd|ok|ok||||
 |convolution mod998|ok|ok||||
 |convolution ll|ok|ok||||
 |dsu|ok|ok||||
@@ -51,9 +51,16 @@ tar.gzに圧縮してバイナリで投げる。
 |lazysegtree RUQ-RMQ|||||
 |lazysegtree range affine range sum|||||
 |lazysegtree template|||||
-|string/suffix_array|ok|
-|string/lcp_array|ok|
-|string/z_algorithm|ok|
+|string/suffix_array|ok|ok|
+|string/lcp_array|ok|ok|
+|string/z_algorithm|ok|ok|
 |string/rolling_hash|
 
 verifyでは各々3問以上は投げたい
+
+～2/20 実装を終わらせる
+～3/8 verify
+～3/15 documentを書く
+～3/23 benchmarking
+
+voidポインタを介すると遅そう、STLのvector経由よりも、普通のポインタを使って普通に配列を操作する方がよいか。

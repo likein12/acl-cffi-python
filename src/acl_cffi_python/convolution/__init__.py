@@ -18,7 +18,7 @@ def Convolution(a: VecM, b: VecM) -> VecM:
         b (VecM): modint配列
     
     Returns:
-        畳み込みの結果のmodint配列 (VecM)
+        VecM: 畳み込みの結果のmodint配列
     
     VecMは大体リストのように使うことが可能。acl_cffi_python.std.vector.VecM
     VecM([1, 2, 4])などのような感じで初期化可能（自動で剰余算が行われる）。
@@ -36,7 +36,7 @@ def ConvolutionLL(a: VecLL, b: VecLL) -> VecLL:
         b (VecLL): long long配列
     
     Returns:
-        畳み込みの結果のlong long配列 (VecLL)
+        VecLL: 畳み込みの結果のlong long配列
     
     VecLLは大体リストのように使うことが可能。acl_cffi_python.std.vector.VecLL
     VecLL([1, 2, 4])などのような感じで初期化可能（C++のデータを使っているのでオーバーフローに注意）。

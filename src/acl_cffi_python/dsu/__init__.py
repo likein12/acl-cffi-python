@@ -15,7 +15,7 @@ class DSU(object):
         コンストラクタ。O(n)
 
         Args:
-            n: int: 頂点数
+            n (int): 頂点数
         """
         self.obj = dsu_new(n)
     def merge(self, a: int, b: int) -> int:
@@ -24,12 +24,11 @@ class DSU(object):
         ならしO(α(n))
         
         Args:
-            a: int: 頂点番号
-            b: int: 頂点番号
+            a (int): 頂点番号
+            b (int): 頂点番号
         
         Returns:
-            aとbが連結だった場合はその代表元、
-            非連結だった場合は、連結したのちに新たな代表元を返す
+            int: aとbが連結だった場合はその代表元、非連結だった場合は、連結したのちに新たな代表元を返す
         """
         return dsu_merge(self.obj, a, b)
     def same(self, a: int, b: int) -> bool:
@@ -38,11 +37,11 @@ class DSU(object):
         ならしO(α(n))
         
         Args:
-            a: int: 頂点番号
-            b: int: 頂点番号
+            a (int): 頂点番号
+            b (int): 頂点番号
         
         Returns:
-            aとbが連結だった場合はTrue、そうでなければFalse
+            bool: aとbが連結だった場合はTrue、そうでなければFalse
         """
         return dsu_same(self.obj, a, b) != 0
     def leader(self, a: int) -> int:
@@ -51,10 +50,10 @@ class DSU(object):
         ならしO(α(n))
         
         Args:
-            a: int: 頂点番号
+            a (int): 頂点番号
         
         Returns:
-            頂点aが属する連結成分の代表元
+            int: 頂点aが属する連結成分の代表元
         """
         return dsu_leader(self.obj, a)
     def size(self, a: int) -> int:
@@ -63,10 +62,10 @@ class DSU(object):
         ならしO(α(n))
 
         Args:
-            a: int: 頂点番号
+            a (int): 頂点番号
         
         Returns:
-            頂点aが属する連結成分のサイズ
+            int: 頂点aが属する連結成分のサイズ
         """
         return dsu_size(self.obj, a)
 

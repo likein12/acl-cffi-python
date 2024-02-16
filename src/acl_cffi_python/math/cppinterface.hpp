@@ -6,13 +6,13 @@
 #include "../std/vector/cppinterface.hpp"
 
 extern "C" {
-    // void *math_ext_gcd(long long a, long long b){
-    //     pll ret = atcoder::internal::inv_gcd(a, b);
-    //     long long g = ret.first;
-    //     long long x = ret.second;
-    //     long long y = (a*x - g)/b;
-    //     return new pll(x, y);
-    // }
+    void *math_ext_gcd(long long a, long long b){
+        pll ret = atcoder::internal::inv_gcd(a, b);
+        long long g = ret.first;
+        long long x = ret.second;
+        long long y = (a*x - g)/b;
+        return new pll(x, y);
+    }
     void *math_crt(void *r, void *m){
         return new pll(atcoder::crt(*((vecll*)r), *((vecll*)m)));
     }

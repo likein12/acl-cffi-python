@@ -10,8 +10,9 @@ setup(
     package_dir={'': 'src'},
 )
 
-tags = ["convolution", "dsu", "std/vector", "std/utility", "std/string", "string",
+tags = ["convolution", "dsu", "std/vector", "std/utility", "std/string", "std/set", "string",
         "maxflow", "mincostflow", "scc", "twosat", "segtree/rmq", "io", "math", "fenwicktree"]
+
 
 root_directory = os.getcwd()
 
@@ -20,7 +21,6 @@ for tag in tags:
 
     ffibuilder = FFI()
     current_directory = os.getcwd()
-
     ffibuilder.cdef(open("cinterface.h", "r").read())
 
     ffibuilder.set_source(f"cffi_core", open(f"cppinterface.hpp", "r").read(),

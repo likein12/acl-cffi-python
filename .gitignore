@@ -4,6 +4,11 @@
 *.o
 *.cpp
 
+# workspace
+workspace/draft.py
+workspace/input.txt
+workspace/Main.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

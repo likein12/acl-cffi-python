@@ -1,2 +1,2 @@
-int *string_suffix_array_str(void *s);
-int *string_lcp_array_str(void *s, int *sa);
+static_arri string_suffix_array_str(void *s);
+static_arri string_lcp_array_str(void *s, static_arri sa);

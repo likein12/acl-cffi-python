@@ -6,9 +6,9 @@
 
 extern "C"{
     using mint = atcoder::modint998244353;
-    static_arrll convolution(static_arrll a, static_arrll b){
-        auto ret = atcoder::convolution(*a.to_other_vector(), *b.to_other_vector());
-        return static_arri(ret, ret.size());
+    static_arrui convolution(static_arrui a, static_arrui b){
+        auto ret = atcoder::convolution(*a.to_vector<mint>(), *b.to_vector<mint>());
+        return static_arrui(ret, ret.size());
     }
 
     static_arrll convolution_ll(static_arrll a, static_arrll b){

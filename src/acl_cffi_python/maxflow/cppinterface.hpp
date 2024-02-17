@@ -14,12 +14,12 @@ extern "C" {
         return ((mf_graph_ll*)obj)->flow(s, t, flow_limit);
     }
     using mf_graph_ll_edge = atcoder::mf_graph<long long>::edge;
-    int mf_graph_ll_edge_from(void *obj) { return ((mf_graph_ll_edge*)obj)->from;}
-    int mf_graph_ll_edge_to(void *obj) { return ((mf_graph_ll_edge*)obj)->to;}
-    long long mf_graph_ll_edge_cap(void *obj) { return ((mf_graph_ll_edge*)obj)->cap;}
-    long long mf_graph_ll_edge_flow(void *obj) { return ((mf_graph_ll_edge*)obj)->flow;}
+    // int mf_graph_ll_edge_from(void *obj) { return ((mf_graph_ll_edge*)obj)->from;}
+    // int mf_graph_ll_edge_to(void *obj) { return ((mf_graph_ll_edge*)obj)->to;}
+    // long long mf_graph_ll_edge_cap(void *obj) { return ((mf_graph_ll_edge*)obj)->cap;}
+    // long long mf_graph_ll_edge_flow(void *obj) { return ((mf_graph_ll_edge*)obj)->flow;}
 
-    void *mf_graph_ll_get_edge(void *obj, int i) { return new mf_graph_ll_edge(((mf_graph_ll*)obj)->get_edge(i)); }
+    mf_graph_ll_edge mf_graph_ll_get_edge(void *obj, int i) { return ((mf_graph_ll*)obj)->get_edge(i); }
     // edges()は作らなくてよいと判断, Python側でiterationを回して取得してもそこまでロスじゃないはず
     void mf_graph_ll_change_edge(void *obj, int i, long long new_cap, long long new_flow){
         ((mf_graph_ll*)obj)->change_edge(i, new_cap, new_flow);

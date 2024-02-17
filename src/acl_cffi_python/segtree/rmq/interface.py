@@ -1,4 +1,4 @@
-from acl_cffi_python.segtree.rmq.core_cffi.lib import (segtree_rmq_max_new, segtree_rmq_max_new_with_vec, 
+from acl_cffi_python.segtree.rmq.cffi_core.lib import (segtree_rmq_max_new, segtree_rmq_max_new_with_vec, 
                                                 segtree_rmq_max_set, segtree_rmq_max_get, segtree_rmq_max_prod,
                                                 segtree_rmq_max_max_right, segtree_rmq_max_min_left)
 from acl_cffi_python.std.vector import VecLL

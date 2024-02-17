@@ -3,8 +3,9 @@
 #include <cassert>
 #include <vector>
 
-constexpr int __STATIC_ARRAY_SIZE = 3e7;
+constexpr int __STATIC_ARRAY_SIZE = 2e8;
 static int __static_arri[__STATIC_ARRAY_SIZE];
+static long long __static_arrll[__STATIC_ARRAY_SIZE];
 static int *__static_arri_end_ptr = __static_arri + __STATIC_ARRAY_SIZE;
 static int *__static_arri_ptr = __static_arri;
 
@@ -14,6 +15,11 @@ constexpr int __STATIC_ARRI_MAX_LEN_INDEX = 0;
 constexpr int __STATIC_ARRI_NOW_LEN_INDEX = 1;
 
 extern "C"{
+    static int get_static_arri_hl(){ return __STATIC_ARRI_HL; }
+    static int get_static_arri_max_len_index(){ return __STATIC_ARRI_MAX_LEN_INDEX; }
+    static int get_static_arri_now_len_index(){ return __STATIC_ARRI_NOW_LEN_INDEX; }
+
+
     // max_lenを0番目、now_lenを1番目に配置
     // charなどを扱うときには、4文字分で確保する？
     int *static_arri_new(int max_len) {

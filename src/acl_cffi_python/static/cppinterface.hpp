@@ -35,6 +35,15 @@ struct static_array {
         _now_len = 0;
     }
 
+    static_array(int n, int max_len){
+        assert(n <= max_len);
+        assert(*now_limit_ptr + max_len < *end_ptr);
+        ptr = *now_limit_ptr;
+        *now_limit_ptr += max_len;
+        _max_len = max_len;
+        _now_len = n;
+    }
+
     static_array(int n, T x, int max_len){
         assert(n <= max_len);
         assert(*now_limit_ptr + max_len < *end_ptr);
@@ -104,10 +113,12 @@ extern "C"{
     using static_arrll = static_array<long long, &__static_arrll_ptr, &__static_arrll_end_ptr>;
     static_arrll static_arrll_new(int max_len){ return static_arrll(max_len); }
     static_arrll static_arrll_new_with_value(int n, long long x, int max_len){ return static_arrll(n, x, max_len); }
+    static_arrll static_arrll_new_with_novalue(int n, int max_len){ return static_arrll(n, max_len); }
 
     using static_arrui = static_array<unsigned int, &__static_arrui_ptr, &__static_arrui_end_ptr>;
     static_arrui static_arrui_new(int max_len){ return static_arrui(max_len); }
     static_arrui static_arrui_new_with_value(int n, unsigned int x, int max_len){ return static_arrui(n, x, max_len); }
+    static_arrui static_arrui_new_with_novalue(int n, int max_len){ return static_arrui(n, max_len); }
 
     using static_string = static_array<char, &__static_string_ptr, &__static_string_end_ptr>;
     static_string static_string_new(int max_len){ return static_string(max_len); }

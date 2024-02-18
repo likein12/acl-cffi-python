@@ -16,9 +16,9 @@ os.chdir(f"src/acl_cffi_python/core")
 
 ffibuilder = FFI()
 current_directory = os.getcwd()
-
+print(current_directory)
 import re
-
+print(open("cinterface.h", "r").read())
 cinterface = ""
 for line in open("cinterface.h", "r"):
     line = line.rstrip()

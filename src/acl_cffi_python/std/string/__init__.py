@@ -15,6 +15,15 @@ class String(object):
     def __len__(self) -> int:
         return string_size(self.obj)
 
+def decode(x: String) -> str:
+    i = 0
+    ret = []
+    while x[i] != b'\0':
+        ret.append(x[i].decode())
+        i += 1
+    return "".join(ret)
+
+
 if __name__ == "__main__":
     s = String("abc".encode())
     s[2] = b'x'

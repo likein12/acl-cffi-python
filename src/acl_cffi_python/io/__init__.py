@@ -1,6 +1,6 @@
 from acl_cffi_python.core.cffi_core.lib import (scanner_ll, scanner_vecll, scanner_vecm, scanner_string,
                                                 printer_ll_one, printer_array_v_ll, printer_array_h_ll, printer_array_v_m, printer_array_h_m,
-                                                scanner_arrll, scanner_arrm, scanner_arrm_safe, printer_array_h_arrm)
+                                                scanner_arrll, scanner_arrm, scanner_arrm_safe, printer_array_h_arrm, printer_string)
 from acl_cffi_python.static import ArrLL, ArrM
 from acl_cffi_python.std.string import String
 from typing import Union

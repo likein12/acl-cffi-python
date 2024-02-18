@@ -1,4 +1,4 @@
-from acl_cffi_python.std.set.cffi_core.lib import (
+from acl_cffi_python.core.cffi_core.lib import (
     setll_new, setll_insert, setll_find, setll_erase,
     setll_erase_val, setll_clear, setll_contain, setll_size,
     setll_begin,setll_end, setll_rbegin, setll_rend, setll_lower_bound,
@@ -87,7 +87,7 @@ class SetLL(object):
     def __repr__(self) -> str:
         return "[" + ", ".join(str(v) for v in self) + "]"
 
-from acl_cffi_python.std.set.cffi_core.lib import (
+from acl_cffi_python.core.cffi_core.lib import (
     mlsetll_new, mlsetll_insert, mlsetll_find, mlsetll_erase,
     mlsetll_erase_val_one, mlsetll_erase_val_all, mlsetll_clear, mlsetll_contain, mlsetll_size,
     mlsetll_begin,mlsetll_end, mlsetll_rbegin, mlsetll_rend, mlsetll_lower_bound,

@@ -12,3 +12,4 @@ static void printer_array_h_ll(void* x);
 static void printer_array_v_m(void* x);
 static void printer_array_h_m(void* x);
 static void printer_array_h_arrm(static_arrui x);
+static void printer_string(char *x);

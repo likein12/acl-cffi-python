@@ -1,16 +1,5 @@
-from cffi_test.lib import get
-import inspect
+import ctypes
 
-x = get()
-print(x)
-x.b = 30
-print(x.b)
-for xx in inspect.getmembers(x):
-    print(xx)
+libc = ctypes.cdll.LoadLibrary("./test.so")
 
-from cffi_test.lib import setll_new, setll_insert, setll_find
-
-
-s = setll_new()
-setll_insert(s, 4)
-print(setll_find(s, 4))
+libc.get_int_n([1,2,3],1)

@@ -5,6 +5,7 @@
 #include <atcoder/modint>
 #include "../std/vector/cppinterface.hpp"
 #include "../static/cppinterface.hpp"
+#include "../gridmap/cppinterface.hpp"
 
 using mint = atcoder::modint998244353;
 extern "C" {
@@ -59,6 +60,22 @@ extern "C" {
             i++;
         }
         res[i] = '\0';
+        return res;
+    }
+
+    static gridmap scanner_gridmap(int h, int w) {
+        gridmap res(h, w);
+        int cur = 0;
+        for (int i=0;i<h;++i){
+            char c = getchar_unlocked();
+            while (c < 32) c = getchar_unlocked();
+            while (c >= 32) {
+                res.mp.push_back(c);
+                c = getchar_unlocked();
+                i++;
+            }
+        }
+        res.mp.push_back('\0');
         return res;
     }
 
@@ -122,6 +139,14 @@ extern "C" {
             printer_ll(((vecm*)x)->at(i).val());
             putchar_unlocked('\n');
         }
+    }
+
+    static void printer_string(char* x) {
+        int i = 0;
+        for (int i=0;x[i] != '\0'; ++i) {
+            putchar_unlocked(x[i]);
+        }
+        putchar_unlocked('\n');
     }
 
 }

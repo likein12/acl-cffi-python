@@ -1,3 +1,4 @@
+from acl_cffi_python.core.cffi_core.lib import mul
 # 結局、データの受け渡しをたくさんやるよりintを継承するのがよさそう
 MOD = 998244353
 

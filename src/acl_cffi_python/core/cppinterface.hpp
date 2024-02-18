@@ -2,4 +2,6 @@
 #include "../static/cppinterface.hpp"
 #include "../string/cppinterface.hpp"
 #include "../convolution/cppinterface.hpp"
+#include "../modint/cppinterface.hpp"
+#include "../fenwicktree/cppinterface.hpp"
 #include "../io/cppinterface.hpp"

@@ -2,4 +2,6 @@
 #include "../static/cinterface.h"
 #include "../string/cinterface.h"
 #include "../convolution/cinterface.h"
+#include "../modint/cinterface.h"
+#include "../fenwicktree/cinterface.h"
 #include "../io/cinterface.h"

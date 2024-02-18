@@ -2,7 +2,7 @@
 #define CFFI_SEGTREERMQ_HPP 1
 #include <atcoder/segtree>
 #include "../../std/vector/cppinterface.hpp"
-
+#include "../../static/cppinterface.hpp"
 
 extern "C" {
     long long segtree_rmq_max_op(long long a, long long b) { return (a>=b)?a:b;}
@@ -10,6 +10,7 @@ extern "C" {
     using segtree_rmq_max = atcoder::segtree<long long, segtree_rmq_max_op, segtree_rmq_max_e>;
     void *segtree_rmq_max_new(int n){ return new segtree_rmq_max(n); }
     void *segtree_rmq_max_new_with_vec(void *obj){ return new segtree_rmq_max(*(vecll*)obj);}
+    void *segtree_rmq_max_new_with_arrll(static_arrll obj){ return new segtree_rmq_max(*obj.to_vector());}
     void segtree_rmq_max_set(void *obj, int p, long long x){ ((segtree_rmq_max*)obj)->set(p, x); }
     long long segtree_rmq_max_get(void *obj, int p) { return ((segtree_rmq_max*)obj)->get(p); }
     long long segtree_rmq_max_prod(void *obj, int l, int r) { return ((segtree_rmq_max*)obj)->prod(l, r); }

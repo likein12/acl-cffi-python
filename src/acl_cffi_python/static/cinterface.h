@@ -1,11 +1,28 @@
-static int get_static_arri_hl();
-static int get_static_arri_max_len_index();
-static int get_static_arri_now_len_index();
+typedef struct  {
+    int *ptr;
+    int _max_len;
+    int _now_len;
+} static_arri;
 
-int *static_arri_new(int sz);
-int *static_arri_new_with_value(int n, int x, int sz);
-// void static_arri_push_back(int *obj, int x);
-// int static_arri_at(int *obj, int index);
-// void static_arri_sub(int *obj, int index, int x);
-// int static_arri_max_len(int *obj);
-// int static_arri_now_len(int *obj);
+typedef struct  {
+    long long *ptr;
+    int _max_len;
+    int _now_len;
+} static_arrll;
+
+typedef struct  {
+    unsigned int *ptr;
+    int _max_len;
+    int _now_len;
+} static_arrui;
+
+typedef unsigned int uint;
+
+static_arri static_arri_new(int max_len);
+static_arri static_arri_new_with_value(int n, int x, int max_len);
+static_arrll static_arrll_new(int max_len);
+static_arrll static_arrll_new_with_value(int n, int x, int max_len);
+static_arrui static_arrui_new(int max_len);
+static_arrui static_arrui_new_with_value(int n, int x, int max_len);
+static_arrui static_string_new(int max_len);
+static_arrui static_string_new_with_value(int n, int x, int max_len);

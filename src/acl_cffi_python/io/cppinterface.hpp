@@ -2,8 +2,11 @@
 #define CFFI_IO_HPP 1
 #include <cstdio>
 #include <cstdlib>
+#include <atcoder/modint>
 #include "../std/vector/cppinterface.hpp"
+#include "../static/cppinterface.hpp"
 
+using mint = atcoder::modint998244353;
 extern "C" {
     static long long scanner_ll() {
         long long x = 0, f = 1, c;
@@ -21,9 +24,27 @@ extern "C" {
         return ret;
     }
 
+    static static_arrll scanner_arrll(int n, int max_len) {
+        static_arrll ret(max_len);
+        for (int i=0;i<n;++i) ret.push_back(scanner_ll());
+        return ret;
+    }
+
     static void* scanner_vecm(int n) {
         vecm *ret = new vecm(n);
         for (int i=0;i<n;++i) ret->at(i) = scanner_ll();
+        return ret;
+    }
+
+    static static_arrui scanner_arrm(int n, int max_len) {
+        static_arrui ret(max_len);
+        for (int i=0;i<n;++i) ret.push_back(scanner_ll());
+        return ret;
+    }
+
+    static static_arrui scanner_arrm_safe(int n, int max_len) {
+        static_arrui ret(max_len);
+        for (int i=0;i<n;++i) ret.push_back(mint(scanner_ll()).val());
         return ret;
     }
 
@@ -84,7 +105,17 @@ extern "C" {
         printer_ll(((vecm*)x)->at(n-1).val());
         putchar_unlocked('\n');
     }
-    
+
+    static void printer_array_h_arrm(static_arrui x) {
+        int n = x.get_now_len();
+        for (int i=0;i<n-1;++i) {
+            printer_ll(x.ptr[i]);
+            putchar_unlocked(' ');
+        }
+        printer_ll(x.ptr[n-1]);
+        putchar_unlocked('\n');
+    }
+
     static void printer_array_h_m(void* x) {
         int n = ((vecm*)x)->size();
         for (int i=0;i<n;++i) {

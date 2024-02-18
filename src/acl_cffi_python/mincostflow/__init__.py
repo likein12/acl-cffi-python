@@ -1,5 +1,4 @@
-from acl_cffi_python.mincostflow.cffi_core.lib import (mcf_graph_ll_ll_new, mcf_graph_ll_ll_add_edge, mcf_graph_ll_ll_flow, mcf_graph_ll_ll_flow_with_limit,
-                                                        mcf_graph_ll_ll_edge_from, mcf_graph_ll_ll_edge_to, mcf_graph_ll_ll_edge_cap, mcf_graph_ll_ll_edge_flow, mcf_graph_ll_ll_edge_cost, mcf_graph_ll_ll_get_edge)
+from acl_cffi_python.core.cffi_core.lib import (mcf_graph_ll_ll_new, mcf_graph_ll_ll_add_edge, mcf_graph_ll_ll_flow, mcf_graph_ll_ll_flow_with_limit, mcf_graph_ll_ll_get_edge)
 from acl_cffi_python.std.utility import PLL
 from typing import List
 
@@ -8,19 +7,19 @@ class MCFEdge(object):
         self.obj = ptr
     @property
     def frm(self):
-        return mcf_graph_ll_ll_edge_from(self.obj)
+        return self.obj.frm
     @property
     def to(self):
-        return mcf_graph_ll_ll_edge_to(self.obj)
+        return self.obj.to
     @property
     def cap(self):
-        return mcf_graph_ll_ll_edge_cap(self.obj)
+        return self.obj.cap
     @property
     def flow(self):
-        return mcf_graph_ll_ll_edge_flow(self.obj)
+        return self.obj.flow
     @property
     def cost(self):
-        return mcf_graph_ll_ll_edge_cost(self.obj)
+        return self.obj.cost
 
 class MCFGraph(object):
     def __init__(self, n: int):

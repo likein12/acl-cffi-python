@@ -1,3 +1,14 @@
+struct pll
+{
+    long long first, second;
+};
+struct pli
+{
+    long long first;
+    int second;
+};
+
+
 void *pll_new(long long f, long long s);
 long long pll_first(void *obj);
 long long pll_second(void *obj);

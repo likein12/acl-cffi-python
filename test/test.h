@@ -1,0 +1,1 @@
+int get_int_n(int *v, int n);

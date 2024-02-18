@@ -1,4 +1,4 @@
-from acl_cffi_python.std.string.cffi_core.lib import (string_new, string_push_back, string_at,
+from acl_cffi_python.core.cffi_core.lib import (string_new, string_push_back, string_at,
                                                   string_size, string_sub)
 
 
@@ -14,6 +14,15 @@ class String(object):
         return string_sub(self.obj, index, c)
     def __len__(self) -> int:
         return string_size(self.obj)
+
+def decode(x: String) -> str:
+    i = 0
+    ret = []
+    while x[i] != b'\0':
+        ret.append(x[i].decode())
+        i += 1
+    return "".join(ret)
+
 
 if __name__ == "__main__":
     s = String("abc".encode())

@@ -1,6 +1,9 @@
 static long long scanner_ll();
 static void* scanner_vecll(int n);
+static static_arrll scanner_arrll(int n, int max_len);
 static void* scanner_vecm(int n);
+static static_arrui scanner_arrm(int n, int max_len);
+static static_arrui scanner_arrm_safe(int n, int max_len);
 static char* scanner_string(int n);
 static void printer_ll(long long x);    
 static void printer_ll_one(long long x);
@@ -8,3 +11,5 @@ static void printer_array_v_ll(void* x);
 static void printer_array_h_ll(void* x);
 static void printer_array_v_m(void* x);
 static void printer_array_h_m(void* x);
+static void printer_array_h_arrm(static_arrui x);
+static void printer_string(char *x);

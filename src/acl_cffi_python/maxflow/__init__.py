@@ -1,5 +1,4 @@
-from acl_cffi_python.maxflow.cffi_core.lib import (mf_graph_ll_new, mf_graph_ll_add_edge, mf_graph_ll_flow, mf_graph_ll_flow_with_limit,
-                                                mf_graph_ll_edge_from, mf_graph_ll_edge_to, mf_graph_ll_edge_cap, mf_graph_ll_edge_flow,
+from acl_cffi_python.core.cffi_core.lib import (mf_graph_ll_new, mf_graph_ll_add_edge, mf_graph_ll_flow, mf_graph_ll_flow_with_limit,
                                                 mf_graph_ll_get_edge, mf_graph_ll_change_edge)
 from typing import List
 
@@ -9,16 +8,16 @@ class MFEdge(object):
         self.obj = ptr
     @property
     def frm(self):
-        return mf_graph_ll_edge_from(self.obj)
+        return self.obj.frm
     @property
     def to(self):
-        return mf_graph_ll_edge_to(self.obj)
+        return self.obj.to
     @property
     def cap(self):
-        return mf_graph_ll_edge_cap(self.obj)
+        return self.obj.cap
     @property
     def flow(self):
-        return mf_graph_ll_edge_flow(self.obj)
+        return self.obj.flow
 
 
 class MFGraph(object):

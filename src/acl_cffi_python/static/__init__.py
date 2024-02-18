@@ -144,21 +144,45 @@ class ArrM(BaseStaticArrayInt):
                 for x in L:
                     self.append(x)
     def append(self, x: int):
-        self.obj.ptr[self.now_len] = x % MOD
+        super().append(x % MOD)
+
+    def __getitem__(self, index: Union[int, slice]):
+        now_len = self.obj._now_len
+        if type(index) == int:
+            if index < 0: index = now_len + index
+            assert 0 <= index < now_len, "index out of range"
+            return self.obj.ptr[index]
+        elif type(index) == slice:
+           return self.slice_helper(index, ArrM)
+    # def __setitem__(self, index: int, item: int):
+    #     self.obj.ptr[index] = item % MOD
+    def __setitem__(self, index: int, item: int):
+        return super().__setitem__(index, item % MOD)
+
+class ArrMUnsafe(BaseStaticArrayInt):
+    def __init__(self, max_len = -1, L = [], ptr = None):
+        if ptr:
+            self.obj = ptr
+        else:
+            if max_len != -1:
+                self.obj = static_arrui_new(max_len)
+            else:
+                self.obj = static_arrui_new(len(L))
+            if L:
+                for x in L:
+                    self.append(x)
+    def append(self, x: int):
+        self[self.now_len] = x
         self.obj._now_len += 1
     def __getitem__(self, index: Union[int, slice]):
-        return self.obj.ptr[index]
-        # now_len = self.obj._now_len
-        # if type(index) == int:
-        #     if index < 0: index = now_len + index
-        #     assert 0 <= index < now_len, "index out of range"
-        #     return self.obj.ptr[index]
-        # elif type(index) == slice:
-        #    return self.slice_helper(index, ArrM)
+        if type(index) == int:
+            if index < 0: index = self.now_len + index
+            return self.obj.ptr[index]
+        elif type(index) == slice:
+           return self.slice_helper(index, ArrM)
     def __setitem__(self, index: int, item: int):
         self.obj.ptr[index] = item % MOD
-    # def __setitem__(self, index: int, item: int):
-    #     return super().__setitem__(index, item % MOD)
+
 
 class ArrUI(BaseStaticArrayInt):
     def __init__(self, max_len = -1, L = [], ptr = None):
